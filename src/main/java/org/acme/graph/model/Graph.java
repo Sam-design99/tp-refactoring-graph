@@ -39,9 +39,6 @@ public class Graph {
 	 * 
 	 * @return
 	 */
-	public void setVertices(List<Vertex> vertices) {
-		this.vertices = vertices;
-	}
 
 	/**
 	 * Recherche d'un sommet par identifiant
@@ -141,10 +138,22 @@ public class Graph {
 	/**
 	 * Définition de la liste des arcs
 	 * 
-	 * @param edges
 	 */
-	public void setEdges(List<Edge> edges) {
-		this.edges = edges;
+
+	public Vertex createVertex(Coordinate coordinate,String id){
+
+		Vertex a = new Vertex();
+		a.setId(id);
+		a.setCoordinate(coordinate);
+		this.vertices.add(a);
+		return  a;
+	}
+
+	public Edge createEdge(Vertex source,Vertex target,String id){
+		Edge ab = new Edge(source, target);
+		ab.setId(id);
+		this.getEdges().add(ab);
+		return ab;
 	}
 
 }
