@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import java.util.List;
+
 /**
  *
  * Un arc matérialisé par un sommet source et un sommet cible
@@ -101,6 +103,10 @@ public class Edge {
 	public String toString() {
 		return id + " (" + source + "->" + target + ")";
 	}
+
+
+
+
 
 
 
