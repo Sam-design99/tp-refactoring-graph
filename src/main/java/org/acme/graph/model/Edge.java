@@ -37,6 +37,8 @@ public class Edge {
 	Edge(Vertex source,Vertex target){
 		this.source=source;
 		this.target=target;
+		this.source.getOutEdges().add(this);
+		this.target.getInEdges().add(this);
 	}
 
 	public String getId() {
@@ -58,10 +60,6 @@ public class Edge {
 		return source;
 	}
 
-	public void setSource(Vertex source) {
-		this.source = source;
-	}
-
 	/**
 	 * Cible avec rendu JSON sous forme d'identifiant
 	 * 
@@ -71,10 +69,6 @@ public class Edge {
 	@JsonIdentityReference(alwaysAsId = true)
 	public Vertex getTarget() {
 		return target;
-	}
-
-	public void setTarget(Vertex target) {
-		this.target = target;
 	}
 
 	/**
